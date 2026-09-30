@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+aside{
+    width: 20%;
+    background-color: rgb(173, 214, 91);
+    display: flex;
+    justify-content: center;
+    margin-right: 5px;
+}
+.principal{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 750px;
+    background-color: rgb(161, 96, 221);
+}
+
+.btn-login{
+    display: flex;
+    justify-content: end;
+}
+
+.login{
+     width: 60px;
+    height: 30px;
+    background-color: rgb(173, 214, 91);
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:10dvw;
+    background-color: rgb(173, 214, 91);
+    border-radius: 10px;
+    height: 30px;
+}
+
+.nav button{
+    background-color: transparent;
+    border: none;
+    font-size: large;
+}
+
+
+.botoes img{
+    width: 20px;
+}
