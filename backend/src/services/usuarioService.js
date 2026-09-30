@@ -5,13 +5,16 @@ export const usuarioService = {
         return await usuarioRepository.findById(id)
     },
     async login(reqUser){
-        const user = await usuarioRepository.findbyEmail(reqUser.email, reqUser.senha)
 
+        const { email, senha } = reqUser
+
+        const user = await usuarioRepository.findbyEmail(email, senha)
         if(user){
             console.log("ihuuuullll login feito")
         }
 
         if(!user){
+            console.log("usuario não encontrado!")
             return null
         }
 

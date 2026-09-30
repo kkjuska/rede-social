@@ -25,22 +25,18 @@ function App() {
         },
         body: JSON.stringify({
           email: email,
-          password: senha
+          senha: senha
         })
       })
 
-      console.log(response.body)
-
       const data = await response.json()
-      console.log(data)
 
       if (!response.ok) {
         throw new Error('Email ou senha invalidos!')
       }
-
-      localStorage.setItem('user', JSON.stringify(data.user))
-
-      navigate('/')
+      if (response.ok){
+        setLoginAberto(false)
+      }
     } catch (error) {
       setErro(error.message)
     }
@@ -118,7 +114,7 @@ function App() {
                   placeholder="Digite seu e-mail" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   <small id="erroEmail" className="erro"></small>
               </div>
-              <div className="campo">
+              <div className="campo">   
                 <label htmlFor="senha">Senha</label>
                 <input id="senha" type="password"
                   placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)}/>

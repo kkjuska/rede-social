@@ -13,6 +13,11 @@ export const usuarioController = {
     async login(req, res) {
         try {
             const login = await usuarioService.login(req.body)
+
+            if(!login){
+                return res.status(401).json({ erro: "Email ou senha invalidos!"})
+            }
+
             res.status(200).json(login)
         } catch (error) {
             res.status(500).json({ erro: error.message })
